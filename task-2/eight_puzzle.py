@@ -38,7 +38,7 @@ def move_blank(s, new_r, new_c):
 
 def h1(s):
     goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
-    board, _, _ = s
+    board, r, c = s
     res = 0
     # The for loop counts the number of elements that is different from
     # the goal configuration.
@@ -50,5 +50,5 @@ def h1(s):
 
 def h3(s):
     # implement this function
-    board, _, _ = s
+    board, r, c = s
     return 0
