@@ -10,7 +10,7 @@ def is_goal(s):
 
 
 def successors(s):
-    _, r, c = s
+    board, r, c = s
     new_r, new_c = r-1, c
     if is_valid(new_r, new_c):
         yield move_blank(s, new_r, new_c), 1
