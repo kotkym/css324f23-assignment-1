@@ -13,7 +13,7 @@ def uniform_cost_tree_search(problem):
         else:
             n_visits += 1
             _, node = heappop(frontier)
-            state, parent, action, path_cost, depth = node
+            state, _, _, path_cost, depth = node
             if problem.is_goal(state):
                 return (node, n_visits)
             else:
@@ -40,7 +40,7 @@ def uniform_cost_graph_search(problem):
         else:
             n_visits += 1
             _, node = heappop(frontier)
-            state, parent, action, path_cost, depth = node
+            state, _, _, path_cost, depth = node
             explored.add(state)
             if problem.is_goal(state):
                 return (node, n_visits)
