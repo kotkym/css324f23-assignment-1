@@ -2,10 +2,7 @@ def initial_state():
     return (8, 0, 0)
 
 def is_goal(s):
-  x, y, z = s
-  if x == 4 and y == 4:
-    return True
-  return False
+    return (s[0] == 4 abd s[1] == 4)
 
 def successors(s):
   x, y, z = s
