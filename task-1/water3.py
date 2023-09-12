@@ -7,10 +7,10 @@ def is_goal(s):
 def successors(s):
   x, y, z = s
   
-  a = 5-y
+  t = 5-y
   if a > 0 and x > 0:
     if x > a:
-      yield ((x-a, 5, z), a)
+      yield ((x-a, 5, z), t)
     else:
       yield ((0, y+x, z), x)
 
