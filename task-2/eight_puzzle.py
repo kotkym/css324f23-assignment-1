@@ -10,7 +10,7 @@ def is_goal(s):
 
 
 def successors(s):
-    board, r, c = s
+    _, r, c = s
     new_r, new_c = r-1, c
     if is_valid(new_r, new_c):
         yield move_blank(s, new_r, new_c), 1
@@ -38,7 +38,7 @@ def move_blank(s, new_r, new_c):
 
 def h1(s):
     goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
-    board, r, c = s
+    board, _, _ = s
     res = 0
     # The for loop counts the number of elements that is different from
     # the goal configuration.
@@ -50,5 +50,13 @@ def h1(s):
 
 def h3(s):
     # implement this function
-    board, r, c = s
-    return 0
+    board, _, _ = s
+    goal = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+    res = 0
+    for idx in range(0, 9):
+        case0 = 0
+        if board[idx] == 0:
+            case0 = 9
+        if (board[idx] - 1 + case0)//3 != (goal[idx] - 1)//3:
+            res += 1
+    return res
