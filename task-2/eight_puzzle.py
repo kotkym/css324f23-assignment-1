@@ -57,6 +57,8 @@ def h3(s):
         case0 = 0
         if board[idx] == 0:
             case0 = 9
+        if (board[idx] + case0) % 3 != goal[idx] % 3 :
+            res += 1
         if (board[idx] - 1 + case0)//3 != (goal[idx] - 1)//3:
             res += 1
     return res
